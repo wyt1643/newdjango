@@ -1,0 +1,979 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>笔记</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="312c542d-eec4-4041-83dd-5363c8af4d78" class="page sans"><header><h1 class="page-title">笔记</h1><p class="page-description"></p></header><div class="page-body"><h1 id="f59fc7a5-5f7b-499d-8b72-f493f5ee8442" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#lecture-6"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#lecture-6"><strong>第6讲</strong></a></h1><h2 id="d1fad5cc-b178-4f2c-a94c-a8cd3fc1c6fc" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#introduction"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#introduction"><strong>介绍</strong></a></h2><ul id="70f7ad68-d23e-44ca-a39e-d9e2e0cfe13d" class="bulleted-list"><li style="list-style-type:disc"><p id="4e747c1a-eaca-418b-bbd8-e341cb90a847" class="">到目前为止，我们已经讨论了如何使用 HTML 和 CSS 构建简单的网页，以及如何使用 Git 和 GitHub 来跟踪代码的更改并与他人协作。我们还熟悉了 Python 编程语言，开始使用 Django 创建 Web 应用程序，并学习如何使用 Django 模型在我们的站点中存储信息。然后，我们介绍了 JavaScript，并学习如何使用它来使网页更具交互性。</p></li></ul><ul id="df6dc36f-dae4-4766-ab2c-b4c199afd777" class="bulleted-list"><li style="list-style-type:disc"><p id="dab4f71c-d50e-4e0b-a2b5-51e61b4e8657" class="">今天，我们将讨论用户界面设计中的常见范式，使用 JavaScript 和 CSS 使我们的网站更加用户友好。</p></li></ul><h2 id="80ccfd81-5b93-4ca7-9e12-6c3396e16283" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#user-interfaces"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#user-interfaces"><strong>用户界面</strong></a></h2><p id="9cd41d1b-de5f-4fef-ba6b-4dec829e59e5" class="">用户界面是网页访问者与该页面交互的方式。作为 Web 开发人员，我们的目标是让这些交互对用户来说尽可能愉快，我们可以使用许多方法来做到这一点。</p><h2 id="862b3417-0ce5-4b1c-8fb1-8183edce5ea7" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#single-page-applications"><strong>单页应用程序</strong></a></h2><p id="035a6248-93d3-41dd-b31d-0c299f1d899e" class="">以前，如果我们想要一个包含多个页面的网站，我们将在 Django 应用程序中使用不同的路由来实现。现在，我们可以只加载一个页面，然后使用 JavaScript 来操作 DOM。这样做的一个主要优点是，我们只需要修改页面中实际更改的部分。例如，如果我们有一个导航栏，它不会根据您当前的页面而更改，那么我们不希望每次切换到页面的新部分时都必须重新呈现该导航栏。</p><p id="a5bf58f7-4611-4752-9631-ddfa3119b976" class="">让我们看一个如何在 JavaScript 中模拟页面切换的示例：</p><p id="cfe22943-22f3-4cc5-99c4-b09acb22ff3b" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c01543d6-4701-4407-9283-90211e4bc4d8" class="code code-wrap"><code class="language-C++" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Single Page&lt;/title&gt;
+        &lt;style&gt;
+            div {
+                display: none;
+            }
+        &lt;/style&gt;
+        &lt;script src=&quot;singlepage.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button data-page=&quot;page1&quot;&gt;Page 1&lt;/button&gt;
+        &lt;button data-page=&quot;page2&quot;&gt;Page 2&lt;/button&gt;
+        &lt;button data-page=&quot;page3&quot;&gt;Page 3&lt;/button&gt;
+        &lt;div id=&quot;page1&quot;&gt;
+            &lt;h1&gt;This is page 1&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;page2&quot;&gt;
+            &lt;h1&gt;This is page 2&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;page3&quot;&gt;
+            &lt;h1&gt;This is page 3&lt;/h1&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="c130000e-8ee9-4984-919a-c5c8fb6b759d" class="">请注意，在上面的 HTML 中，我们有三个按钮和三个 div。目前，div 只包含一小部分文本，但我们可以想象每个 div 都包含我们网站上一个页面的内容。现在，我们将添加一些 JavaScript，允许我们使用按钮在页面之间切换。</p><p id="400ceeae-d6ca-4b07-97fd-c671da8e5e8d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cb9a6df-3caf-4b3a-b29f-7758cf15b518" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">// Shows one page and hides the other two
+function showPage(page) {
+
+    // Hide all of the divs:
+    document.querySelectorAll(&#x27;div&#x27;).forEach(div =&gt; {
+        div.style.display = &#x27;none&#x27;;
+    });
+
+    // Show the div provided in the argument
+    document.querySelector(`#${page}`).style.display = &#x27;block&#x27;;
+}
+
+// Wait for page to loaded:
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+
+    // Select all buttons
+    document.querySelectorAll(&#x27;button&#x27;).forEach(button =&gt; {
+
+        // When a button is clicked, switch to that page
+        button.onclick = function() {
+            showPage(this.dataset.page);
+        }
+    })
+});</code></pre><figure id="adc6d325-56e4-4f13-bb48-885b8eaf70ee" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/singlepage1.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/singlepage1.gif"/></a></figure><p id="a2812886-1155-4bb1-a791-c7e06a6caf02" class="">在许多情况下，当我们第一次访问一个网站时，加载每个页面的全部内容是低效的，因此我们需要使用服务器来访问新数据。例如，当您访问一个新闻网站时，如果该网站在您第一次访问该页面时必须加载它可用的每篇文章，那么该网站的加载时间会太长。我们可以使用类似于我们在上一讲中加载货币汇率时使用的策略来避免这个问题。这一次，我们将看看如何使用 Django 从我们的单页应用程序发送和接收信息。为了说明它是如何工作的，让我们看一个简单的 Django 应用程序。它有两种 URL 模式 <code>urls.py</code> ：</p><p id="18ab199a-94a1-4491-879d-c50f6302192c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="457cc778-2b5d-43a6-97bd-8ef8ded9c011" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">urlpatterns = [
+    path(&quot;&quot;, views.index, name=&quot;index&quot;),
+    path(&quot;sections/&lt;int:num&gt;&quot;, views.section, name=&quot;section&quot;)
+]</code></pre><p id="7309ee16-92f4-4eae-97ff-8ed4935e7ded" class="">以及 中的 <code>views.py</code> 两条对应路由。请注意， <code>section</code> 路由接受一个整数，然后返回基于该整数的文本字符串作为 HTTP 响应。</p><p id="9600a2a8-4231-4767-aae6-b8375a273363" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="89da4a9b-3e72-44dd-a8d4-b2ac12987788" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from django.http import Http404, HttpResponse
+from django.shortcuts import render
+
+# Create your views here.
+def index(request):
+    return render(request, &quot;singlepage/index.html&quot;)
+
+# The texts are much longer in reality, but have
+# been shortened here to save space
+texts = [&quot;Text 1&quot;, &quot;Text 2&quot;, &quot;Text 3&quot;]
+
+def section(request, num):
+    if 1 &lt;= num &lt;= 3:
+        return HttpResponse(texts[num - 1])
+    else:
+        raise Http404(&quot;No such section&quot;)</code></pre><p id="abc2f711-aead-4bae-bbfd-c106223a5af5" class="">现在，在我们的 <code>index.html</code> 文件中，我们将利用上一讲学习的 AJAX 向服务器发出请求，以获取特定部分的文本并将其显示在屏幕上：</p><p id="02f98772-a3dd-4962-8082-4b91c524017b" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="edb1ed30-cecb-4120-a2c9-f9e3714017e5" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Single Page&lt;/title&gt;
+        &lt;style&gt;
+        &lt;/style&gt;
+        &lt;script&gt;
+
+            // Shows given section
+            function showSection(section) {
+                
+                // Find section text from server
+                fetch(`/sections/${section}`)
+                .then(response =&gt; response.text())
+                .then(text =&gt; {
+                    // Log text and display on page
+                    console.log(text);
+                    document.querySelector(&#x27;#content&#x27;).innerHTML = text;
+                });
+            }
+
+            document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+                // Add button functionality
+                document.querySelectorAll(&#x27;button&#x27;).forEach(button =&gt; {
+                    button.onclick = function() {
+                        showSection(this.dataset.section);
+                    };
+                });
+            });
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello!&lt;/h1&gt;
+        &lt;button data-section=&quot;1&quot;&gt;Section 1&lt;/button&gt;
+        &lt;button data-section=&quot;2&quot;&gt;Section 2&lt;/button&gt;
+        &lt;button data-section=&quot;3&quot;&gt;Section 3&lt;/button&gt;
+        &lt;div id=&quot;content&quot;&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre><figure id="2bedf262-56ef-45b0-bd26-572645a8f9c3" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/singlepage2.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/singlepage2.gif"/></a></figure><p id="bd9a7e83-1353-436d-bb0f-a11b378687df" class="">现在，我们创建了一个站点，我们可以从服务器加载新数据，而无需重新加载整个 HTML 页面！</p><p id="dcfa4dff-30ff-427c-aa6c-e4507b1d7571" class="">不过，我们网站的一个缺点是 URL 现在信息量较少。在上面的视频中，您会注意到，即使我们从一个部分切换到另一个部分，URL 也保持不变。我们可以使用 JavaScript History API 来解决这个问题。此 API 允许我们将信息推送到浏览器历史记录并手动更新 URL。让我们来看看如何使用这个 API。想象一下，我们有一个与前一个相同的 Django 项目，但这次我们希望更改我们的脚本以使用历史 API：</p><p id="37d1b06c-918e-4865-b08a-03499be00730" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="68972be0-d36b-4fbe-8416-a4ef4ca57853" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">// When back arrow is clicked, show previous section
+window.onpopstate = function(event) {
+    console.log(event.state.section);
+    showSection(event.state.section);
+}
+
+function showSection(section) {
+    fetch(`/sections/${section}`)
+    .then(response =&gt; response.text())
+    .then(text =&gt; {
+        console.log(text);
+        document.querySelector(&#x27;#content&#x27;).innerHTML = text;
+    });
+
+}
+
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    document.querySelectorAll(&#x27;button&#x27;).forEach(button =&gt; {
+        button.onclick = function() {
+            const section = this.dataset.section;
+
+            // Add the current state to the history
+            history.pushState({section: section}, &quot;&quot;, `section${section}`);
+            showSection(section);
+        };
+    });
+});</code></pre><p id="e9176645-a4d2-4081-95ea-9dc58b07f0ba" class="">在上面的函数中 <code>showSection</code> ，我们使用了该 <code>history.pushState</code> 函数。这个函数根据三个参数为我们的浏览历史添加了一个新元素：</p><ol type="1" id="54b0e2b8-9b20-40c7-8c31-67ae6876feba" class="numbered-list" start="1"><li>与状态关联的任何数据。</li></ol><ol type="1" id="7106afc1-777d-4b65-98c8-d8c74abee4ce" class="numbered-list" start="2"><li>大多数 Web 浏览器忽略的 title 参数</li></ol><ol type="1" id="62f4a607-3024-4386-a61f-0888ee4c789f" class="numbered-list" start="3"><li>URL 中应显示的内容</li></ol><p id="2fc3bbe0-5e52-40fe-a5a1-a957c8f9ee58" class="">我们在上面的 JavaScript 中所做的另一个更改是设置参数 <code>onpopstate</code> ，该参数指定了当用户单击后退箭头时我们应该做什么。在这种情况下，我们希望在按下按钮时显示上一节。现在，该网站看起来更加用户友好：</p><figure id="993d79be-af3f-4df8-babe-adc73bc89bcf" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/singlepage3.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/singlepage3.gif"/></a></figure><h2 id="30342fed-d16a-4a01-bf7a-f7365ba674e0" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#scroll"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#scroll"><strong>滚动</strong></a></h2><p id="9d2e25bc-eada-4c4e-b4d4-76b9c7414172" class="">为了更新和访问浏览器历史记录，我们使用了一个重要的 JavaScript 对象，称为窗口。窗口还有其他一些属性，我们可以使用它们来使我们的网站看起来更漂亮：</p><ul id="772e7e7a-e5e4-4bf5-a4f2-0fefd865ae38" class="bulleted-list"><li style="list-style-type:disc"><p id="b85a9b9b-6ba8-4ef2-9e73-7fc45dc74f31" class=""><code>window.innerWidth</code> ：窗口宽度（以像素为单位）</p></li></ul><ul id="e85e43ff-a192-4562-b51f-b1285fb7109d" class="bulleted-list"><li style="list-style-type:disc"><p id="fae222ec-e9d3-4a3e-b1ba-411a71b050e0" class=""><code>window.innerHeight</code> ：窗口高度（以像素为单位）</p></li></ul><figure id="f4c816d4-7e86-4e31-85fd-77825535874f" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/innerMeasures.png"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/innerMeasures.png"/></a></figure><p id="76e29ecd-27e1-4e20-a9f3-ab7c91a20325" class="">虽然窗口表示用户当前可见的内容，但文档引用整个网页，该网页通常比窗口大得多，迫使用户上下滚动以查看页面的内容。为了使用我们的滚动，我们可以访问其他变量：</p><ul id="cc19cebb-688c-44df-a522-8174b79014a2" class="bulleted-list"><li style="list-style-type:disc"><p id="0da95026-1469-4794-b2b2-7052192a132f" class=""><code>window.scrollY</code> ：我们从页面顶部滚动了多少像素</p></li></ul><ul id="edb94a9a-2322-4cd4-bc06-e62421774340" class="bulleted-list"><li style="list-style-type:disc"><p id="9f616e87-423a-4009-9bf6-639864591699" class=""><code>document.body.offsetHeight</code> ：整个文档的高度（以像素为单位）。</p></li></ul><figure id="35b5966c-b352-4380-b051-3aef2e023e38" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/scroll.png"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/scroll.png"/></a></figure><p id="3d5d263b-8298-4826-a3e6-081024c15d8d" class="">我们可以使用这些措施来确定用户是否已滚动到页面末尾，使用 比较 <code>window.scrollY + window.innerHeight &gt;= document.body.offsetHeight</code> .例如，当我们到达页面底部时，以下页面会将背景颜色更改为绿色：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="13370643-fee8-801c-8550-dbff5df310e8" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Scroll&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            transition: background 0.3s;
+        }
+    &lt;/style&gt;
+    &lt;script&gt;
+        // Function to generate paragraphs
+        function generateContent() {
+            const container = document.createElement(&#x27;div&#x27;);
+            for (let i = 1; i &lt;= 200; i++) {
+                const p = document.createElement(&#x27;p&#x27;);
+                p.textContent = i; // Set paragraph text to the current number
+                container.appendChild(p);
+            }
+            document.body.appendChild(container);
+        }
+
+        // Event listener for scrolling
+        window.onscroll = () =&gt; {
+            // Check if we&#x27;re at the bottom
+            if (window.innerHeight + window.scrollY &gt;= document.body.offsetHeight - 1) {
+                // Change color to green
+                document.querySelector(&#x27;body&#x27;).style.background = &#x27;green&#x27;;
+            } else {
+                // Change color to white
+                document.querySelector(&#x27;body&#x27;).style.background = &#x27;white&#x27;;
+            }
+        };
+
+        // Generate content when the window loads
+        window.onload = generateContent;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><figure id="bf5119c9-dcaf-4968-8613-63b0132398ba" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/scrollgreen.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/scrollgreen.gif"/></a></figure><h3 id="5f618855-4196-4c3e-815c-13d415eb331a" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#infinite-scroll"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#infinite-scroll"><strong>无限滚动</strong></a></h3><p id="cf4fec04-faf2-485a-b72c-6ebc1e9d7181" class="">更改页面末尾的背景颜色可能不是那么有用，但是如果我们想实现无限滚动，我们可能希望检测我们是否位于页面末尾。例如，如果你在一个社交媒体网站上，你不想一次加载所有帖子，你可能想加载前十个，然后当用户到达底部时，加载下一个十个。让我们看一个可以做到这一点的 Django 应用程序。此应用程序有两条路径 <code>urls.py</code></p><p id="6f5ee51a-c3aa-427f-a2f2-12d9b6589cf0" class=""><code>urlpatterns = [<br/>    path(&quot;&quot;, views.index, name=&quot;index&quot;),<br/>    path(&quot;posts&quot;, views.posts, name=&quot;posts&quot;)<br/>]</code></p><p id="4ac0107c-4f5b-45fd-ab56-cd5ea0e84ddb" class="">以及两个相应的视图： <code>views.py</code></p><p id="353c12c4-d6f6-4b49-add1-6ddcf372185f" class=""><code><strong>import</strong></code><code> time<br/><br/></code><code><strong>from</strong></code><code> django.http </code><code><strong>import</strong></code><code> JsonResponse<br/></code><code><strong>from</strong></code><code> django.shortcuts </code><code><strong>import</strong></code><code> render<br/><br/></code><code><em># Create your views here.<br/></em></code><code><strong>def</strong></code><code> index(request):<br/>    </code><code><strong>return</strong></code><code> render(request, &quot;posts/index.html&quot;)<br/><br/></code><code><strong>def</strong></code><code> posts(request):<br/><br/>    </code><code><em># Get start and end points<br/></em></code><code>    start = int(request.GET.get(&quot;start&quot;) </code><code><strong>or</strong></code><code> 0)<br/>    end = int(request.GET.get(&quot;end&quot;) </code><code><strong>or</strong></code><code> (start + 9))<br/><br/>    </code><code><em># Generate list of posts<br/></em></code><code>    data = []<br/>    </code><code><strong>for</strong></code><code> i </code><code><strong>in</strong></code><code> range(start, end + 1):<br/>        data.append(f&quot;Post #</code><code><strong>{</strong></code><code>i</code><code><strong>}</strong></code><code>&quot;)<br/><br/>    </code><code><em># Artificially delay speed of response<br/></em></code><code>    time.sleep(1)<br/><br/>    </code><code><em># Return list of posts<br/></em></code><code>    </code><code><strong>return</strong></code><code> </code><code><strong>JsonResponse</strong></code><code>({<br/>        &quot;posts&quot;: data<br/>    })</code></p><p id="de4e0f3a-577a-4034-925f-2de112a9c9b7" class="">请注意，视图 <code>posts</code> 需要两个参数：一个 <code>start</code> 点和一个 <code>end</code> 点。在此视图中，我们创建了自己的 API，可以通过访问 url <code>localhost:8000/posts?start=10&amp;end=15</code> 来测试该 API，它返回以下 JSON：</p><p id="92d3455a-72fb-4eca-acec-a01548aa615e" class=""><code>{<br/>    &quot;posts&quot;: [<br/>        &quot;Post #10&quot;,<br/>        &quot;Post #11&quot;, <br/>        &quot;Post #12&quot;, <br/>        &quot;Post #13&quot;, <br/>        &quot;Post #14&quot;, <br/>        &quot;Post #15&quot;<br/>    ]<br/>}</code></p><p id="b80e5de3-7ff9-4645-916e-fa26a7193bfc" class="">现在，在网站加载的模板中 <code>index.html</code> ，我们开始时只有正文中的空 <code>div</code> 和一些样式。请注意，我们在开始时加载静态文件，然后引用 <code>static</code> 文件夹中的 JavaScript 文件。</p><p id="8271913d-9be0-4b6f-aeb1-6d83d048bd2a" class=""><code><br/>{% load static %}<br/>&lt;!DOCTYPE html&gt;<br/></code><code><strong>&lt;html&gt;</strong></code><code><strong>&lt;head&gt;</strong></code><code><strong>&lt;title&gt;</strong></code><code>My Webpage</code><code><strong>&lt;/title&gt;</strong></code><code><strong>&lt;style&gt;</strong></code><code><strong>.post</strong></code><code> {<br/>                background-color: #77dd11;<br/>                padding: 20px;<br/>                margin: 10px;<br/>            }<br/><br/>            </code><code><strong>body</strong></code><code> {<br/>                padding-bottom: 50px;<br/>            }<br/>        </code><code><strong>&lt;/style&gt;</strong></code><code><strong>&lt;script </strong></code><code>scr=&quot;{% static &#x27;posts/script.js&#x27; %}&quot;</code><code><strong>&gt;&lt;/script&gt;</strong></code><code><strong>&lt;/head&gt;</strong></code><code><strong>&lt;body&gt;</strong></code><code><strong>&lt;div</strong></code><code> id=&quot;posts&quot;</code><code><strong>&gt;</strong></code><code><strong>&lt;/div&gt;</strong></code><code><strong>&lt;/body&gt;</strong></code><code><strong>&lt;/html&gt;</strong></code></p><p id="d37bac47-4bc3-4dd3-8ddb-b87d05721517" class="">现在有了 JavaScript，我们将等到用户滚动到页面末尾，然后使用我们的 API 加载更多帖子：</p><p id="a330c0a3-c890-4336-a9e2-9ef1cd382257" class=""><code><em>// Start with first post</em></code><code><strong>let</strong></code><code> counter = 1;<br/><br/></code><code><em>// Load posts 20 at a time</em></code><code><strong>const</strong></code><code> quantity = 20;<br/><br/></code><code><em>// When DOM loads, render the first 20 posts</em></code><code>document.addEventListener(&#x27;DOMContentLoaded&#x27;, load);<br/><br/></code><code><em>// If scrolled to bottom, load the next 20 posts</em></code><code>window.onscroll = () =&gt; {<br/>    </code><code><strong>if </strong></code><code>(window.innerHeight + window.scrollY &gt;= document.body.offsetHeight) {<br/>        load();<br/>    }<br/>};<br/><br/></code><code><em>// Load next set of posts</em></code><code><strong>function</strong></code><code> load() {<br/><br/>    </code><code><em>// Set start and end post numbers, and update counter</em></code><code><strong>const</strong></code><code> start = counter;<br/>    </code><code><strong>const</strong></code><code> end = start + quantity - 1;<br/>    counter = end + 1;<br/><br/>    </code><code><em>// Get new posts and add posts</em></code><code>fetch(`/posts?start=${start}&amp;end=${end}`)<br/>    .then(response =&gt; response.json())<br/>    .then(data =&gt; {<br/>        data.posts.forEach(add_post);<br/>    })<br/>};<br/><br/></code><code><em>// Add a new post with given contents to DOM</em></code><code><strong>function</strong></code><code> add_post(contents) {<br/><br/>    </code><code><em>// Create new post</em></code><code><strong>const</strong></code><code> post = document.createElement(&#x27;div&#x27;);<br/>    post.className = &#x27;post&#x27;;<br/>    post.innerHTML = contents;<br/><br/>    </code><code><em>// Add post to DOM</em></code><code>document.querySelector(&#x27;#posts&#x27;).append(post);<br/>};</code></p><p id="67d02d39-ed0d-4c7a-811f-aa652322d730" class="">现在，我们创建了一个无限滚动的网站！</p><figure id="8594cb80-4d8c-45ef-a947-868c0371e6a4" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/infscroll.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/infscroll.gif"/></a></figure><h2 id="17e8ef9e-d196-4562-96dc-429743cd0bdc" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#animation"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#animation"><strong>动画</strong></a></h2><p id="5a35b543-4945-4d0a-95fb-c01b2af427f5" class="">我们可以使我们的网站更有趣的另一种方法是为它们添加一些动画。事实证明，除了提供样式之外，CSS 还使我们能够轻松地为 HTML 元素制作动画。</p><p id="f2ca7906-f26c-47e4-8e79-56dc3e1c3dc5" class="">要在 CSS 中创建动画，我们使用以下格式，其中动画细节可以包括开始和结束样式 （ <code>to</code> 和 <code>from</code> ） 或持续时间中不同阶段的样式（从 <code>0%</code> 到 <code>100%</code> ）。例如：</p><p id="cab58b2e-f1b3-43d2-a7f1-390b9f12cf6a" class=""><code><strong>@keyframes</strong></code><code> animation_name {<br/>    </code><code><strong>from</strong></code><code> {<br/>        </code><code><em>/* Some styling for the start */</em></code><code>}<br/><br/>    </code><code><strong>to</strong></code><code> {<br/>        </code><code><em>/* Some styling for the end */</em></code><code>}<br/>}</code></p><p id="778ef058-7f4d-436d-a3a8-da55f308c2e2" class="">or:</p><p id="edc03aab-ab49-4d6c-abeb-6a1b1a1ba457" class=""><code><strong>@keyframes</strong></code><code> animation_name {<br/>    0% {<br/>        </code><code><em>/* Some styling for the start */</em></code><code>}<br/><br/>    75% {<br/>        </code><code><em>/* Some styling after 3/4 of animation */</em></code><code>}<br/><br/>    100% {<br/>        </code><code><em>/* Some styling for the end */</em></code><code>}<br/>}</code></p><p id="57be4aa6-439a-499d-b920-89b9e2b52d0d" class="">然后，要将动画应用于元素，我们包括 <code>animation-name</code> 、 <code>animation-duration</code> （以秒为单位） 和 <code>animation-fill-mode</code> （通常 <code>forwards</code> 以 为单位）。例如，下面是一个页面，当我们第一次进入页面时，标题会增长：</p><p id="3430a74b-0980-4721-bca0-8340b40023b0" class=""><code>&lt;!DOCTYPE html&gt;<br/></code><code><strong>&lt;html</strong></code><code> lang=&quot;en&quot;</code><code><strong>&gt;</strong></code><code><strong>&lt;head&gt;</strong></code><code><strong>&lt;title&gt;</strong></code><code>Animate</code><code><strong>&lt;/title&gt;</strong></code><code><strong>&lt;style&gt;</strong></code><code><strong>@keyframes</strong></code><code> grow {<br/>                </code><code><strong>from</strong></code><code> {<br/>                    font-size: 20px;<br/>                }<br/>                </code><code><strong>to</strong></code><code> {<br/>                    font-size: 100px;<br/>                }<br/>            }<br/><br/>            </code><code><strong>h1</strong></code><code> {<br/>                animation-name: grow;<br/>                animation-duration: 2s;<br/>                animation-fill-mode: forwards;<br/>            }<br/>        </code><code><strong>&lt;/style&gt;</strong></code><code><strong>&lt;/head&gt;</strong></code><code><strong>&lt;body&gt;</strong></code><code><strong>&lt;h1&gt;</strong></code><code>Welcome!</code><code><strong>&lt;/h1&gt;</strong></code><code><strong>&lt;/body&gt;</strong></code><code><strong>&lt;/html&gt;</strong></code></p><figure id="e65324af-d974-415c-98e3-b832b81bbd1a" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/animate0.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/animate0.gif"/></a></figure><p id="b00727cb-806e-4ee9-9e05-ed2d0febaac3" class="">我们可以做的不仅仅是操纵大小：下面的例子显示了如何通过更改几行来更改标题的位置：</p><p id="5c2beb6a-c5af-4e74-9300-49c1340bbf83" class=""><code>&lt;!DOCTYPE html&gt;<br/></code><code><strong>&lt;html</strong></code><code> lang=&quot;en&quot;</code><code><strong>&gt;</strong></code><code><strong>&lt;head&gt;</strong></code><code><strong>&lt;title&gt;</strong></code><code>Animate</code><code><strong>&lt;/title&gt;</strong></code><code><strong>&lt;style&gt;</strong></code><code><strong>@keyframes</strong></code><code> move {<br/>                </code><code><strong>from</strong></code><code> {<br/>                    left: 0%;<br/>                }<br/>                </code><code><strong>to</strong></code><code> {<br/>                    left: 50%;<br/>                }<br/>            }<br/><br/>            </code><code><strong>h1</strong></code><code> {<br/>                position: relative;<br/>                animation-name: move;<br/>                animation-duration: 2s;<br/>                animation-fill-mode: forwards;<br/>            }<br/>        </code><code><strong>&lt;/style&gt;</strong></code><code><strong>&lt;/head&gt;</strong></code><code><strong>&lt;body&gt;</strong></code><code><strong>&lt;h1&gt;</strong></code><code>Welcome!</code><code><strong>&lt;/h1&gt;</strong></code><code><strong>&lt;/body&gt;</strong></code><code><strong>&lt;/html&gt;</strong></code></p><figure id="e6c5f6ad-7a38-475c-900d-b01722f7c161" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/animate1.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/animate1.gif"/></a></figure><p id="5410b3a5-0e77-4418-a6e4-19108586d08c" class="">现在，让我们也看看设置一些中间 CSS 属性。我们可以在动画的任意百分比处指定样式。在下面的示例中，我们将通过仅更改上方的动画来将标题从左向右移动，然后从左向左移动</p><p id="486ac83d-3542-4557-acb6-a362ad015e91" class=""><code><strong>@keyframes</strong></code><code> move {<br/>    0% {<br/>        left: 0%;<br/>    }<br/>    50% {<br/>        left: 50%;<br/>    }<br/>    100% {<br/>        left: 0%;<br/>    }<br/>}</code></p><figure id="cdd594ee-2649-4dd1-9c9b-21bed09605f8" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/animate2.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/animate2.gif"/></a></figure><p id="16fe42f9-a4c4-401c-87e2-62cbb5ec656b" class="">如果我们想多次重复一个动画，我们可以将 <code>animation-iteration-count</code> 更改为大于 1 的数字（甚至 <code>infinite</code> 用于无休止的动画）。我们可以设置许多动画属性来更改动画的不同方面。</p><p id="b9948418-4215-404a-82ac-f9154f6ef187" class="">除了 CSS，我们还可以使用 JavaScript 来进一步控制我们的动画。让我们使用移动标题示例（无限重复）来展示如何创建启动和停止动画的按钮。假设我们已经有了动画、按钮和标题，我们可以添加以下脚本来启动和暂停动画：</p><p id="d482ab4b-27de-4cdd-966c-742d46f5fe5a" class=""><code>document.addEventListener(&#x27;DOMContentLoaded&#x27;, </code><code><strong>function</strong></code><code>() {<br/><br/>    </code><code><em>// Find heading</em></code><code><strong>const</strong></code><code> h1 = document.querySelector(&#x27;h1&#x27;);<br/><br/>    </code><code><em>// Pause Animation by default</em></code><code>h1.style.animationPlayState = &#x27;paused&#x27;;<br/><br/>    </code><code><em>// Wait for button to be clicked</em></code><code>document.querySelector(&#x27;button&#x27;).onclick = () =&gt; {<br/><br/>        </code><code><em>// If animation is currently paused, begin playing it</em></code><code><strong>if </strong></code><code>(h1.style.animationPlayState == &#x27;paused&#x27;) {<br/>            h1.style.animationPlayState = &#x27;running&#x27;;<br/>        }<br/><br/>        </code><code><em>// Otherwise, pause the animation</em></code><code><strong>else</strong></code><code> {<br/>            h1.style.animationPlayState = &#x27;paused&#x27;;<br/>        }<br/>    }<br/><br/>})</code></p><figure id="0fce6678-7562-4ccd-ae22-ca9f2892805e" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/animate4.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/animate4.gif"/></a></figure><p id="9de98245-c945-4966-bba3-4753afa52720" class="">现在，让我们看看如何将我们的动画新知识应用到我们之前制作的帖子页面中。具体来说，假设我们希望能够在阅读完帖子后隐藏帖子。让我们想象一个与我们刚刚创建的 Django 项目相同的项目，但 HTML 和 JavaScript 略有不同。我们将进行的第一个更改是对 <code>add_post</code> 功能，这次还在帖子的右侧添加了一个按钮：</p><p id="152425a5-e944-41f5-aa6d-20c3d89c1a36" class=""><code><em>// Add a new post with given contents to DOM</em></code><code><strong>function</strong></code><code> add_post(contents) {<br/><br/>    </code><code><em>// Create new post</em></code><code><strong>const</strong></code><code> post = document.createElement(&#x27;div&#x27;);<br/>    post.className = &#x27;post&#x27;;<br/>    post.innerHTML = `${contents} &lt;button class=&quot;hide&quot;&gt;Hide&lt;/button&gt;`;<br/><br/>    </code><code><em>// Add post to DOM</em></code><code>document.querySelector(&#x27;#posts&#x27;).append(post);<br/>};</code></p><p id="e31bdac3-8bb8-461d-98cb-6224e7bac805" class="">现在，我们将努力在单击 <code>hide</code> 按钮时隐藏帖子。为此，我们将添加一个事件侦听器，每当用户单击页面上的任意位置时，就会触发该侦听器。然后，我们编写一个函数，将 <code>event</code> 作为参数，这很有用，因为我们可以使用该 <code>event.target</code> 属性来访问单击的内容。我们还可以使用该 <code>parentElement</code> 类来查找 DOM 中给定元素的父元素。</p><p id="5d0d5115-32b4-4e2c-88f0-7ae96eb0a33d" class=""><code><em>// If hide button is clicked, delete the post</em></code><code>document.addEventListener(&#x27;click&#x27;, event =&gt; {<br/><br/>    </code><code><em>// Find what was clicked on</em></code><code><strong>const</strong></code><code> element = event.target;<br/><br/>    </code><code><em>// Check if the user clicked on a hide button</em></code><code><strong>if </strong></code><code>(element.className === &#x27;hide&#x27;) {<br/>        element.parentElement.remove()<br/>    }<br/>    <br/>});</code></p><figure id="aa62f01e-f066-4e0f-b7ab-dc0affc271b8" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/hide0.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/hide0.gif"/></a></figure><p id="d12c0b7a-5be0-460a-a5f6-6a8868812e14" class="">我们现在可以看到我们已经实现了隐藏按钮，但它看起来并不像它可能的那样好。也许我们想在删除帖子之前让帖子淡出并缩小。为此，我们将首先创建一个 CSS 动画。下面的动画将花费 75% 的时间 <code>opacity</code> 从 1 更改为 0，这实际上会使帖子慢慢淡出。然后，它将剩余时间用于将其 <code>height</code> 所有与属性相关的属性移动到 0，从而有效地将帖子缩小为零。</p><p id="87ecbbaf-467c-4df3-aaef-511430b377d9" class=""><code><strong>@keyframes</strong></code><code> hide {<br/>    0% {<br/>        opacity: 1;<br/>        height: 100%;<br/>        line-height: 100%;<br/>        padding: 20px;<br/>        margin-bottom: 10px;<br/>    }<br/>    75% {<br/>        opacity: 0;<br/>        height: 100%;<br/>        line-height: 100%;<br/>        padding: 20px;<br/>        margin-bottom: 10px;<br/>    }<br/>    100% {<br/>        opacity: 0;<br/>        height: 0px;<br/>        line-height: 0px;<br/>        padding: 0px;<br/>        margin-bottom: 0px;<br/>    }<br/>}</code></p><p id="e5e70919-f56b-4f43-9556-b9d447d2c954" class="">接下来，我们将这个动画添加到我们帖子的 CSS 中。请注意，我们最初将 <code>animation-play-state</code> 设置为 <code>paused</code> ，这意味着默认情况下不会隐藏帖子。</p><p id="5b594559-57a7-4c83-aaf6-0ca5e382e08b" class=""><code><strong>.post</strong></code><code> {<br/>    background-color: #77dd11;<br/>    padding: 20px;<br/>    margin-bottom: 10px;<br/>    animation-name: hide;<br/>    animation-duration: 2s;<br/>    animation-fill-mode: forwards;<br/>    animation-play-state: paused;<br/>}</code></p><p id="f147d1f6-3ccd-42c5-bc0d-f5786f543770" class="">最后，我们希望能够在单击 <code>hide</code> 按钮后启动动画，然后删除帖子。我们可以通过从上面编辑我们的 JavaScript 来做到这一点：</p><p id="a2336fae-1476-48ee-861e-c30c978e4f2f" class=""><code><em>// If hide button is clicked, delete the post</em></code><code>document.addEventListener(&#x27;click&#x27;, event =&gt; {<br/><br/>    </code><code><em>// Find what was clicked on</em></code><code><strong>const</strong></code><code> element = event.target;<br/><br/>    </code><code><em>// Check if the user clicked on a hide button</em></code><code><strong>if </strong></code><code>(element.className === &#x27;hide&#x27;) {<br/>        element.parentElement.style.animationPlayState = &#x27;running&#x27;;<br/>        element.parentElement.addEventListener(&#x27;animationend&#x27;, () =&gt; {<br/>            element.parentElement.remove();<br/>        });<br/>    }<br/>    <br/>});</code></p><figure id="85e6cb53-62cb-4a3e-b9ca-05e44db00f73" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/hide1.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/hide1.gif"/></a></figure><p id="53b95204-8e4a-409c-b04f-8e5c39c0f2e6" class="">正如你在上面看到的，隐藏功能现在看起来好多了！</p><h2 id="c935ad38-1a6c-49d5-b5fc-0014c37e1b9e" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#react"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#react"><strong>反应</strong></a></h2><p id="0537d7e4-01bb-48c0-8d78-7e6c0d723136" class="">在这一点上，你可以想象一个更复杂的网站需要多少 JavaScript 代码。我们可以通过使用 JavaScript 框架来减少我们实际需要编写的代码量，就像我们使用 Bootstrap 作为 CSS 框架来减少我们实际必须编写的 CSS 数量一样。最流行的 JavaScript 框架之一是一个名为 React 的库。</p><p id="583beff0-aeb5-42a3-b050-9bad67026d02" class="">到目前为止，在本课程中，我们一直在使用命令式编程方法，即为计算机提供一组要执行的语句。例如，要更新 HTML 页面中的计数器，我们可能有如下所示的代码：</p><p id="976b677e-4bc6-4d22-9211-937024d89e89" class="">视图：</p><p id="12fc2454-93ff-428b-88a5-0b2083fde36c" class=""><code><strong>&lt;h1&gt;</strong></code><code>0</code><code><strong>&lt;/h1&gt;</strong></code></p><p id="8a99e7db-1265-4b7a-955c-3ae16b0c6b59" class="">逻辑：</p><p id="9a98c796-4ab2-4360-a81f-62556350f96d" class=""><code><strong>let</strong></code><code> num = parseInt(document.querySelector(&quot;h1&quot;).innerHTML);<br/>num += 1;<br/>document.querySelector(&quot;h1&quot;).innerHTML = num;</code></p><p id="6a2270e5-860a-4266-9586-21305d735edd" class="">React 允许我们使用声明式编程，这将允许我们简单地编写代码来解释我们希望显示的内容，而不必担心我们如何显示它。在 React 中，计数器可能看起来更像这样：</p><p id="63f81cf5-3875-4d70-ae97-c0584c84d6b1" class="">视图：</p><p id="101bb4e0-114c-43e3-b1c3-93bc0ca01f02" class=""><code><strong>&lt;h1&gt;</strong></code><code>{num}</code><code><strong>&lt;/h1&gt;</strong></code></p><p id="9298a3bd-3068-408d-bf72-0d7cdbda0393" class="">逻辑：</p><p id="67f67a8c-edf5-42a6-bc6b-c16995a16bac" class=""><code>num += 1;</code></p><p id="b29dadec-15f9-4fb0-862e-96e81be45454" class="">React 框架是围绕组件的概念构建的，每个组件都可以有一个底层状态。组件是您可以在网页上看到的东西，例如帖子或导航栏，状态是与该组件关联的一组变量。React 的美妙之处在于，当状态发生变化时，React 会自动相应地更改 DOM。</p><p id="56d84b81-276c-49ce-b15d-755bf48cbdd5" class="">使用 React 的方法有很多种（包括 Facebook 发布的流行的 create-react-app 命令），但今天我们将专注于直接在 HTML 文件中开始。为此，我们必须导入三个 JavaScript 包：</p><ul id="297149d2-2d73-4615-bdb2-73b4c6b223fe" class="bulleted-list"><li style="list-style-type:disc"><p id="8ec7726e-d5e3-4d16-bbe4-60e7cc2a4347" class=""><code>React</code> ：定义组件及其行为</p></li></ul><ul id="c7e6dac1-10f9-43ef-8388-913ca7c07e23" class="bulleted-list"><li style="list-style-type:disc"><p id="23a5a56c-7863-4537-941e-bd7b3a871ecb" class=""><code>ReactDOM</code> ：获取 React 组件并将它们插入到 DOM 中</p></li></ul><ul id="80489b71-1d62-454f-80a2-55016c20624d" class="bulleted-list"><li style="list-style-type:disc"><p id="669991c2-936e-43a6-8a5a-7676b9608c33" class=""><code>Babel</code> ：将 JSX（我们将在 React 中编写的语言）翻译成我们的浏览器可以解释的纯 JavaScript。JSX 与 JavaScript 非常相似，但具有一些附加功能，包括在我们的代码中表示 HTML 的能力。</p></li></ul><p id="c94940d3-2eb4-430e-bad6-5b0326b6c0d8" class="">让我们深入研究并创建我们的第一个 React 应用程序！</p><p id="eefdc3e1-620a-44d1-9a51-b164704f78b1" class=""><code>&lt;!DOCTYPE html&gt;<br/></code><code><strong>&lt;html</strong></code><code> lang=&quot;en&quot;</code><code><strong>&gt;</strong></code><code><strong>&lt;head&gt;</strong></code><code><strong>&lt;script </strong></code><code>src=&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot; crossorigin</code><code><strong>&gt;&lt;/script&gt;</strong></code><code><strong>&lt;script </strong></code><code>src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.production.min.js&quot; crossorigin</code><code><strong>&gt;&lt;/script&gt;</strong></code><code><strong>&lt;script </strong></code><code>src=&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;</code><code><strong>&gt;&lt;/script&gt;</strong></code><code><strong>&lt;title&gt;</strong></code><code>Hello</code><code><strong>&lt;/title&gt;</strong></code><code><strong>&lt;/head&gt;</strong></code><code><strong>&lt;body&gt;</strong></code><code><strong>&lt;div</strong></code><code> id=&quot;app&quot;</code><code><strong>&gt;&lt;/div&gt;</strong></code><code><strong>&lt;script </strong></code><code>type=&quot;text/babel&quot;</code><code><strong>&gt;</strong></code><code><strong>function</strong></code><code> App() {<br/>                </code><code><strong>return</strong></code><code> (<br/>                    &lt;div&gt;<br/>                        Hello!<br/>                    &lt;/div&gt;<br/>                );<br/>            }<br/><br/>            ReactDOM.render(&lt;App /&gt;, document.querySelector(&quot;#app&quot;));<br/>        </code><code><strong>&lt;/script&gt;</strong></code><code><strong>&lt;/body&gt;</strong></code><code><strong>&lt;/html&gt;</strong></code></p><p id="450025e5-7f5c-4bfa-a5fa-15a64bd8f12f" class="">由于这是我们的第一个 React 应用，让我们详细了解一下这段代码的每个部分在做什么：</p><ul id="b62e318e-897b-40c0-b97c-c9e28236fd08" class="bulleted-list"><li style="list-style-type:disc"><p id="e3a91f9e-ede0-4c02-8596-1c897dd68f38" class="">在标题上方的三行中，我们导入了最新版本的 React、ReactDOM 和 Babel。</p></li></ul><ul id="9d2bcc83-a7d1-4bc4-9b69-df6116941bcd" class="bulleted-list"><li style="list-style-type:disc"><p id="e3d8ee7a-32ae-4e1b-ad4f-102c0af9a656" class="">在正文中，我们包含一个带有 <code>id</code> 的 <code>app</code> . <code>div</code> 我们几乎总是想把它留空，并在下面的反应代码中填写它。</p></li></ul><ul id="c98c8e7f-b2db-4880-a41d-1ee4d5b70284" class="bulleted-list"><li style="list-style-type:disc"><p id="b57fcd33-7149-4b96-8225-d9509381bbf3" class="">我们包含一个 script 标签，其中指定 <code>type=&quot;text/babel&quot;</code> .这向浏览器发出信号，表明需要使用 Babel 翻译以下脚本。</p></li></ul><ul id="37a30d48-cc10-4f6f-819c-5f4fa2f23412" class="bulleted-list"><li style="list-style-type:disc"><p id="eeb6ff4a-527d-4d93-9650-23b611702644" class="">接下来，我们创建一个名为 <code>App</code> .React 中的组件可以用 JavaScript 函数表示。</p></li></ul><ul id="d86b5186-00b0-486e-b085-ab456cb13f79" class="bulleted-list"><li style="list-style-type:disc"><p id="2add9827-2757-4223-adbe-383a4d9f1c05" class="">我们的组件返回我们想要渲染给 DOM 的内容。在这种情况下，我们只需返回 <code>&lt;div&gt;Hello!&lt;/div&gt;</code> .</p></li></ul><ul id="4406ab25-9362-412d-9e70-2ce1f524ecb5" class="bulleted-list"><li style="list-style-type:disc"><p id="93a1c675-72c8-46d0-be21-9ae797c0d332" class="">脚本的最后一行使用该函数，该 <code>ReactDOM.render</code> 函数采用两个参数：</p><ol type="1" id="3ee3d8c1-00e5-4a76-9e39-eb99ba588e1f" class="numbered-list" start="1"><li>要呈现的组件</li></ol><ol type="1" id="88237d84-8ce3-4354-a0d1-dc98282d3353" class="numbered-list" start="2"><li>DOM 中的一个元素，组件应该在其中呈现</li></ol></li></ul><p id="2971df23-408f-4664-a66a-b21a6e23f1c5" class="">现在我们了解了代码在做什么，我们可以看一下生成的网页：</p><figure id="3734d5f5-af40-40a0-996f-197cdc5f2c32" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/react0.png"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/react0.png"/></a></figure><p id="1ce60982-11a3-4f28-ab99-25ca1a6b5466" class="">React 的一个有用特性是能够在其他组件中渲染组件。为了演示这一点，让我们创建另一个组件，称为 <code>Hello</code> ：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7366fa25-b791-4984-9e9c-e627030931b3" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function Hello(props) {
+    return (
+        &lt;h1&gt;Hello&lt;/h1&gt;
+    );
+}
+</code></pre><p id="5b827fba-18cc-4647-a582-07890ee399aa" class="">现在，让我们在组件内部渲染三个 <code>Hello</code> <code>App</code> 组件：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2a42ef97-f286-4a2b-ba8f-8d317cb06b79" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function App() {
+    return (
+        &lt;div&gt;
+            &lt;Hello /&gt;
+            &lt;Hello /&gt;
+            &lt;Hello /&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre><p id="3413c8dc-64d7-4da5-b398-086577aa55f0" class="">这给了我们一个页面，如下所示：</p><figure id="8c71dcda-2d74-47d4-8ca0-11581c28a388" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/react1.png"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/react1.png"/></a></figure><p id="3108979e-2dff-4c88-8b35-7bfefc438c9e" class="">到目前为止，这些组件并不是那么有趣，因为它们都完全相同。我们可以通过向这些组件添加额外的属性（React 术语中的 props）来使它们更加灵活。例如，假设我们希望向三个不同的人打招呼。我们可以在类似于 HTML 属性的方法中提供这些人的名字：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ed6830a8-3d5b-4832-a8f2-c084481a1821" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function App() {
+    return (
+        &lt;div&gt;
+            &lt;Hello name=&quot;Harry&quot; /&gt;
+            &lt;Hello name=&quot;Ron&quot; /&gt;
+            &lt;Hello name=&quot;Hermione&quot; /&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre><p id="eff0da69-a6b6-44e5-96e5-ba41583499fe" class="">然后，我们可以使用 <code>props.PROP_NAME</code> .然后，我们可以使用大括号将其插入到 JSX 中：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="10002c72-f29f-4656-aa51-a539c748a2de" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function Hello(props) {
+    return (
+        &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;
+    );
+}
+</code></pre><p id="4f9cd14e-f7c7-431c-9eeb-d999adb8721b" class="">现在，我们的页面显示了这三个名字！</p><figure id="39a3a8d1-7289-426d-a385-4ed3dc1787d4" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/react2.png"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/react2.png"/></a></figure><p id="c7f4bfe0-aa9e-4dbd-b6b3-a787b75ce9da" class="">现在，让我们看看如何使用 React 重新实现我们第一次使用 JavaScript 时构建的计数器页面。我们的整体结构将保持不变，但在组件 <code>App</code> 内部，我们将使用 React 的 <code>useState</code> 钩子为我们的组件添加状态。参数 to <code>useState</code> 是状态的初始值，我们将它设置为 <code>0</code> 。该函数返回一个表示状态的变量和一个允许我们更新状态的函数。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e55a1026-54c6-4b47-8aa9-bb23a3184f83" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">const [count, setCount] = React.useState(0);
+</code></pre><p id="a5fe8719-4599-4823-a54b-b6418e6dbeb2" class="">现在，我们可以处理函数将呈现的内容，我们将指定标题和按钮。我们还将添加一个事件侦听器，用于单击按钮时，React 使用以下 <code>onClick</code> 属性进行处理：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0c254753-bdcb-447e-9c6a-ef01f1e564fc" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">return (
+    &lt;div&gt;
+        &lt;h1&gt;{count}&lt;/h1&gt;
+        &lt;button onClick={updateCount}&gt;Count&lt;/button&gt;
+    &lt;/div&gt;
+);
+</code></pre><p id="58cad1b4-a235-45ce-bf4c-5e843d2b4cfa" class="">最后，让我们定义 <code>updateCount</code> 函数。为此，我们将使用该 <code>setCount</code> 函数，该函数可以将状态的新值作为参数。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2ae9e055-60e9-4a4b-a6a5-0e036559863d" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function updateCount() {
+    setCount(count + 1);
+}
+</code></pre><p id="3d317e3a-e2cc-4a30-81a0-f97b2f398eed" class="">现在我们有一个正常运行的柜台站点！</p><figure id="7d144046-8904-4cb3-9bec-271721477533" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/react3.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/react3.gif"/></a></figure><h3 id="aa483735-9cd0-4b54-9cbb-45d72096aa21" class=""><a href="https://cs50.harvard.edu/web/2020/notes/6/#addition"><strong></strong></a><a href="https://cs50.harvard.edu/web/2020/notes/6/#addition"><strong>加法</strong></a></h3><p id="6637229a-79f8-49b2-b1f4-ba23fd3b6fe1" class="">现在我们已经对 React 框架有了一定的了解，让我们使用我们学到的知识来构建一个类似游戏的网站，用户将在其中解决附加问题。首先，我们将创建一个新文件，其设置与其他 React 页面相同。要开始构建此应用程序，让我们考虑一下我们可能希望在状态中跟踪的内容。我们应该包括我们认为在用户访问我们的页面时可能会更改的任何内容。我们的状态可能包括：</p><ul id="502b40f7-c388-400e-bfe9-9aeba2d093d9" class="bulleted-list"><li style="list-style-type:disc"><p id="a876bb75-8fd1-4d57-97ce-458ff0cc8c92" class=""><code>num1</code> ：要添加的第一个数字</p></li></ul><ul id="c7ff4ca8-6d9e-496d-b50d-e087fb8785b4" class="bulleted-list"><li style="list-style-type:disc"><p id="bcc96bc6-fe96-4cf3-bfb4-e86cb7961534" class=""><code>num2</code> ：要添加的第二个数字</p></li></ul><ul id="9dea905c-04d6-460d-8a8f-d7bf00514186" class="bulleted-list"><li style="list-style-type:disc"><p id="40ec6853-ce11-4643-b809-d68db90a3d86" class=""><code>response</code> ：用户输入的内容</p></li></ul><ul id="07560b89-0834-4d7c-98b6-7d4b2d7230da" class="bulleted-list"><li style="list-style-type:disc"><p id="f1e4b0d0-31cc-496b-9777-b53e8c609f06" class=""><code>score</code> ：用户正确回答了多少个问题。</p></li></ul><p id="e81c3c15-ff38-4e4a-92b6-bca2797d034e" class="">现在，我们的状态可以是一个包含所有这些信息的 JavaScript 对象：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="eb3a908e-f161-48cc-aaa1-3dae114c390d" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">const [state, setState] = React.useState({
+    num1: 1,
+    num2: 1,
+    response: &quot;&quot;,
+    score: 0
+});
+</code></pre><p id="f3f343d0-d7fc-492d-9fb6-cdf820d357e8" class="">现在，使用状态中的值，我们可以呈现一个基本的用户界面。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3dec67fd-7fef-41d3-92d7-df014c70b0b1" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">return (
+    &lt;div&gt;
+        &lt;div&gt;{state.num1} + {state.num2}&lt;/div&gt;
+        &lt;input value={state.response} /&gt;
+        &lt;div&gt;Score: {state.score}&lt;/div&gt;
+    &lt;/div&gt;
+);
+</code></pre><p id="34a75c85-c4d5-460d-be26-881e337d414f" class="">现在，网站的基本布局如下所示：</p><figure id="0cd72443-6572-4710-b397-c2e50e401b75" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/add0.png"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/add0.png"/></a></figure><p id="9a3b2e8a-0b0d-4961-96f3-7640c1e844af" class="">此时，用户无法在输入框中键入任何内容，因为它的值是固定的，因为 <code>state.response</code> 当前是空字符串。为了解决这个问题，让我们向 input 元素添加一个 <code>onChange</code> 属性，并将其设置为等于一个名为 <code>updateResponse</code></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d64aa2dc-4824-418a-97bb-bd5c38a3fac3" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">onChange={updateResponse}
+</code></pre><p id="01518b83-be4a-46c8-8289-8e83be0838ba" class="">现在，我们必须定义函数，该函数接受触发函数 <code>updateResposne</code> 的事件，并将 <code>response</code> 设置为输入的当前值。此函数允许用户键入，并存储已键入的任何内容 <code>state</code> 。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="82d20d7e-09a5-481a-b62a-0f971b46bfcc" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function updateResponse(event) {
+    setState({
+        ...state,
+        response: event.target.value
+    });
+}
+</code></pre><p id="46d6c152-ed28-4cc3-bd4c-57e12c871fa5" class="">现在，让我们添加用户提交问题的功能。我们将首先添加另一个事件侦听器，并将其链接到我们接下来要编写的函数：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18b3277b-6112-49c8-8cc6-1cd0a8a9aef3" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">onKeyPress={inputKeyPress}
+</code></pre><p id="76753b71-7bbc-4dc3-b4c4-48efd9c66fbe" class="">现在，我们将定义函数 <code>inputKeyPress</code> 。在这个函数中，我们将首先检查该 <code>Enter</code> 键是否被按下，然后检查答案是否正确。当用户正确时，我们希望将分数提高 1，为下一个问题选择随机数，并清除响应。如果答案不正确，我们希望将分数降低 1 并清除响应。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="97abdb93-c063-4733-9a3c-82971e75ece7" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">function inputKeyPress(event) {
+    if (event.key === &quot;Enter&quot;) {
+        const answer = parseInt(state.response);
+        if (answer === state.num1 + state.num2) {
+            // User got question right
+            setState({
+                ...state,
+                score: state.score + 1,
+                response: &quot;&quot;,
+                num1: Math.ceil(Math.random() * 10),
+                num2: Math.ceil(Math.random() * 10)
+            });
+        } else {
+            // User got question wrong
+            setState({
+                ...state,
+                score: state.score - 1,
+                response: &quot;&quot;
+            })
+        }
+    }
+}
+</code></pre><p id="293705aa-ac2d-4e87-95e9-867a9a0f887f" class="">为了对应用程序进行一些最后的润色，让我们为页面添加一些样式。我们将把所有内容放在应用的中心，然后通过向包含问题的 div 添加一个 <code>id</code> of <code>problem</code> 来使问题变大，然后将以下 CSS 添加到样式标签中：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b57fd87-7ae4-4085-b722-0ac0e7ac4b32" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">#app {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#problem {
+    font-size: 72px;
+}
+</code></pre><p id="c87350f6-415d-46f0-8006-e36a02ad7ccc" class="">最后，让我们添加获得 10 分后赢得比赛的能力。为此，我们将向 <code>render</code> 函数添加一个条件，一旦我们得到 10 个点，就会返回完全不同的东西：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="28bfceca-1889-436b-aaac-e617eabc914e" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">if (state.score === 10) {
+    return (
+        &lt;div id=&quot;winner&quot;&gt;You won!&lt;/div&gt;
+    );
+}
+</code></pre><p id="04d4032c-bfa0-4f82-9b65-4caa809de5f2" class="">为了让胜利更加令人兴奋，我们还将为替代 div 添加一些样式：</p><p id="b33afbcd-91b9-468c-bca5-ba3b42f75922" class=""><code>#winner {<br/>    font-size: 72px;<br/>    color: green;<br/>}</code></p><p id="f3dd9dbe-69e4-4203-adfb-724aa4c52c9a" class="">现在，让我们来看看我们的应用程序！</p><figure id="96f09dbb-f532-4cf7-a9bb-f4766a89de4c" class="image"><a href="https://cs50.harvard.edu/web/2020/notes/6/images/add1.gif"><img src="https://cs50.harvard.edu/web/2020/notes/6/images/add1.gif"/></a></figure><p id="86dcac2f-c4ce-4453-a579-c746ae717c6a" class="">今天的讲座就到这里了！下次，我们将讨论构建大型 Web 应用程序的一些最佳实践。</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

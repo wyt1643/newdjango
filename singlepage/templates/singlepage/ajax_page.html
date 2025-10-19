@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AJAX 数据获取</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                cursor: pointer;
+                background-color: #2196F3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #0b7dda;
+            }
+            #content {
+                padding: 20px;
+                border: 1px solid #ddd;
+                margin-top: 20px;
+                min-height: 100px;
+                background-color: #f9f9f9;
+                border-radius: 4px;
+            }
+        </style>
+        <script src="{% static 'singlepage/ajax_page.js' %}"></script>
+    </head>
+    <body>
+        <!-- 作者: 吴永婷 -->
+        <!-- 创建时间: 2024年 -->
+        
+        <h1>AJAX 数据获取演示</h1>
+        <p>点击下方按钮从服务器获取不同部分的内容：</p>
+        
+        <button data-section="1">部分 1</button>
+        <button data-section="2">部分 2</button>
+        <button data-section="3">部分 3</button>
+        
+        <div id="content">
+            <!-- 内容将通过AJAX动态加载到这里 -->
+            <p>请点击上方按钮加载内容...</p>
+        </div>
+    </body>
+</html>

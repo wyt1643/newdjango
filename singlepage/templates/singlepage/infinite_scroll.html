@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>无限滚动加载演示</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .post {
+                padding: 20px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background-color: #f9f9f9;
+            }
+            .post h3 {
+                margin-top: 0;
+                color: #333;
+            }
+            .post p {
+                color: #666;
+            }
+            .loading {
+                text-align: center;
+                padding: 20px;
+                color: #666;
+                display: none;
+            }
+            .end-message {
+                text-align: center;
+                padding: 20px;
+                color: #999;
+                font-style: italic;
+                display: none;
+            }
+        </style>
+        <script src="{% static 'singlepage/infinite_scroll.js' %}"></script>
+    </head>
+    <body>
+        <!-- 作者: 吴永婷 -->
+        <!-- 创建时间: 2024年 -->
+        
+        <h1>下拉无限滚动加载演示</h1>
+        <p>向下滚动页面以加载更多内容：</p>
+        
+        <div id="posts-container">
+            <!-- 内容将通过JavaScript动态加载到这里 -->
+        </div>
+        
+        <div class="loading" id="loading">
+            正在加载更多内容...
+        </div>
+        
+        <div class="end-message" id="end-message">
+            已经到底了，没有更多内容了！
+        </div>
+    </body>
+</html>

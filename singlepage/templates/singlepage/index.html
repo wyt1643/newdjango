@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Single Page Application</title>
+        <style>
+            div {
+                display: none;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                cursor: pointer;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            #page1, #page2, #page3 {
+                padding: 20px;
+                border: 1px solid #ddd;
+                margin-top: 20px;
+                border-radius: 4px;
+            }
+        </style>
+        <script src="{% static 'singlepage/singlepage.js' %}"></script>
+    </head>
+    <body>
+        <!-- 作者: 吴永婷 -->
+        <!-- 创建时间: 2024年 -->
+        
+        <h1>单页应用演示</h1>
+        <p>选择以下演示功能：</p>
+        
+        <h2>页面内切换演示</h2>
+        <button data-page="page1">页面 1</button>
+        <button data-page="page2">页面 2</button>
+        <button data-page="page3">页面 3</button>
+        
+        <h2>其他演示链接</h2>
+        <a href="/ajax/" style="display: inline-block; margin-right: 10px; padding: 10px 15px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 4px;">AJAX 数据获取</a>
+        <a href="/forms/" style="display: inline-block; margin-right: 10px; padding: 10px 15px; background-color: #ff9800; color: white; text-decoration: none; border-radius: 4px;">交互式表单</a>
+        <a href="/infinite-scroll/" style="display: inline-block; padding: 10px 15px; background-color: #9c27b0; color: white; text-decoration: none; border-radius: 4px;">无限滚动加载</a>
+        
+        <div id="page1">
+            <h2>这是页面 1</h2>
+            <p>这是第一个页面的内容。单页应用允许在不重新加载整个页面的情况下切换内容。</p>
+        </div>
+        
+        <div id="page2">
+            <h2>这是页面 2</h2>
+            <p>这是第二个页面的内容。使用JavaScript可以动态显示和隐藏不同的内容区域。</p>
+        </div>
+        
+        <div id="page3">
+            <h2>这是页面 3</h2>
+            <p>这是第三个页面的内容。这种方式可以提供更流畅的用户体验。</p>
+        </div>
+    </body>
+</html>

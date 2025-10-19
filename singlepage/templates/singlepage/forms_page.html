@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>交互式表单</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            form {
+                margin: 20px 0;
+                padding: 20px;
+                background-color: #f2f2f2;
+                border-radius: 4px;
+            }
+            input, textarea {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            button {
+                padding: 10px 15px;
+                cursor: pointer;
+                background-color: #FF9800;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #e68900;
+            }
+            #result {
+                padding: 20px;
+                border: 1px solid #ddd;
+                margin-top: 20px;
+                background-color: #f9f9f9;
+                border-radius: 4px;
+                display: none;
+            }
+            .error {
+                color: red;
+                font-size: 0.9em;
+            }
+        </style>
+        <script src="{% static 'singlepage/forms_page.js' %}"></script>
+    </head>
+    <body>
+        <!-- 作者: 吴永婷 -->
+        <!-- 创建时间: 2024年 -->
+        
+        <h1>交互式表单演示</h1>
+        <p>填写表单并提交，结果将以单页方式显示，无需重新加载页面：</p>
+        
+        <form id="myForm">
+            <div>
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">邮箱：</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">留言：</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">提交</button>
+        </form>
+        
+        <div id="result">
+            <h2>提交结果</h2>
+            <p id="resultContent"></p>
+        </div>
+    </body>
+</html>
